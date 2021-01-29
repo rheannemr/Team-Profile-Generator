@@ -2,6 +2,11 @@ const inquirer = require('inquirer')
 
 const fs = require('fs')
 
+const Engineer = require('./Employees/Engineer');
+const Manager = require('./Employees/Manager');
+const Intern = require('./Employees/Intern');
+
+
 function Employee(name, id) {
     this.name = name;
     this.id = id;
