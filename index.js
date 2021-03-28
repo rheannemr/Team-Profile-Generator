@@ -9,10 +9,10 @@ const Intern = require('./lib/Intern');
 
 const render = require('./src/htmlRender');
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
-const outputPath = path.join(OUTPUT_DIR, "index.html");
+const PUBLIC_DIR = path.resolve(__dirname, "public");
+const publicHTML = path.join(PUBLIC_DIR, "index.html");
 
-const employeeTeamArr = []
+let employeeTeamArr = []
 
 function addEmployee() {
 
@@ -151,5 +151,7 @@ function addIntern() {
 };
 
 function generateTeam() {
-    fs.writeFileSync(outputPath, render(employeeteamArr), 'utf-8');
+    fs.writeFileSync(publicHTML, render(employeeTeamArr), 'utf-8');
 };
+
+addManager();
