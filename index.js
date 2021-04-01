@@ -11,10 +11,13 @@ const render = require('./src/htmlRender');
 
 let employeeTeamArr = []
 
-function initProfileGenerator() {
-    addEmployee();
-    addManager();
-}
+const PUBLIC_DIR = path.resolve(__dirname, "public");
+const publicHTML = path.join(PUBLIC_DIR, "index.html");
+
+// function initProfileGenerator() {
+//     addEmployee();
+//     addManager();
+// }
 
 function addEmployee() {
 
@@ -156,4 +159,6 @@ function generateTeam() {
     fs.writeFileSync(publicHTML, render(employeeTeamArr), 'utf-8');
 };
 
-initProfileGenerator();
+addManager();
+
+// initProfileGenerator();
