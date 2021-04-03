@@ -6,6 +6,7 @@ The team profile generator application generates a team including a manager, eng
 
 - [General Info](#general-info)
 - [Technologies](#technologies)
+- [Demo](#demo)
 - [Author](#author)
 
 ## General Info
@@ -41,6 +42,10 @@ This project is created with:
 - [Jest package](https://www.npmjs.com/package/jest)
 - [HTML](https://html.com/)
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
+
+## Demo
+
+[Link to Video Walk through](https://drive.google.com/file/d/1LnLe9uBWTxIAq9NtN1LRhMgdcaNDHey9/view)
 
 ## Author
 
