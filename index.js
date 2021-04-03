@@ -8,16 +8,13 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 
 const render = require('./src/htmlRender');
+const htmlRender = require('./src/htmlRender');
 
 let employeeTeamArr = []
 
-const PUBLIC_DIR = path.resolve(__dirname, "public");
-const publicHTML = path.join(PUBLIC_DIR, "index.html");
-
-// function initProfileGenerator() {
-//     addEmployee();
-//     addManager();
-// }
+function initProfileGenerator() {
+    addEmployee();
+}
 
 function addEmployee() {
 
@@ -77,6 +74,7 @@ function addManager() {
             response.email,
             response.officeNumber
         );
+        fs.appendFileSync('./public/index.html', manager.newManagerHTML());
         employeeTeamArr.push(manager);
         addEmployee();
     });
@@ -113,6 +111,7 @@ function addEngineer() {
             response.email,
             response.github
         );
+        fs.appendFileSync('./public/index.html', engineer.newEngineerHTML());
         employeeTeamArr.push(engineer);
         addEmployee();
     });
@@ -149,6 +148,7 @@ function addIntern() {
             response.email,
             response.school
         );
+        fs.appendFileSync('./public/index.html', intern.newInternHTML());
         employeeTeamArr.push(intern);
         addEmployee();
     });
@@ -156,9 +156,7 @@ function addIntern() {
 };
 
 function generateTeam() {
-    fs.writeFileSync(publicHTML, render(employeeTeamArr), 'utf-8');
-};
+    fs.appendFileSync('./public/index.html', render(employeeTeamArr), 'utf-8');
+}
 
-addManager();
-
-// initProfileGenerator();
+initProfileGenerator();
