@@ -22,7 +22,7 @@ function addEmployee() {
         {
             type: "list",
             name: "newEmployee",
-            message: "If adding a new employee to the team, please select the role below. If not, please select the Continue option.",
+            message: "If adding an employee to the team, please select the role below. If not, please select the Continue option.",
             choices: [
                 "Manager",
                 "Engineer",
